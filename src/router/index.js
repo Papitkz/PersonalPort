@@ -63,46 +63,35 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // Use saved position if available (browser back/forward)
     if (savedPosition) {
       return savedPosition
     }
-    // Scroll to anchor if hash is present, smoothly
     if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth',
       }
     }
-    // Default scroll to top
     return { top: 0 }
   },
 })
 
-// Global navigation guard to update page title and meta tags dynamically
 router.beforeEach((to, from, next) => {
-  // Find the nearest route with a title
   const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title)
-
-  // Find the nearest route with meta tags
   const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags)
 
-  // Set document title if available
   if (nearestWithTitle) {
     document.title = nearestWithTitle.meta.title
   }
 
-  // Remove any stale meta tags added by the router
   Array.from(document.querySelectorAll('[data-vue-router-controlled]')).forEach(el => el.parentNode.removeChild(el))
 
-  // Add new meta tags to the document head
   if (nearestWithMeta) {
     nearestWithMeta.meta.metaTags.forEach(tagDef => {
       const tag = document.createElement('meta')
       Object.keys(tagDef).forEach(key => {
         tag.setAttribute(key, tagDef[key])
       })
-      // Mark meta tags so they can be removed later
       tag.setAttribute('data-vue-router-controlled', '')
       document.head.appendChild(tag)
     })
