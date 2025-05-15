@@ -144,14 +144,14 @@
               <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
               :style="isMobile ? { order: 1, marginTop: '1rem' ,minWidth: isMobile ? '100%' : ''} : { display: 'grid', gridTemplateRows: 'auto auto 1fr', }">
                 <span class="project-number" v-if="!isMobile">01</span>
-                <h2  style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
+                <h2 @click="goToTiktok()"   style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
                   Tiktok
                 </h2>
-                <span   v-if="!isMobile" style="border-bottom:1px solid grey;align-self: end;font-family:Suisse !important; color:#333;">WEBSITE  <div style="float:right" class="wrap-arrow mb-4"><img src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
+                <span   v-if="!isMobile" style="border-bottom:1px solid grey;align-self: end;font-family:Suisse !important; color:#333;">WEBSITE  <div style="float:right" class="wrap-arrow mb-4"><img  @click="goToTiktok()"   src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
               <hr v-if="isMobile"/>
               </div>
               <div  class="project-image">
-                <img   src="../../public/Tiktok.png" alt="Cvc Travel Agent Website" />
+                <img  @click="goToTiktok()"    src="../../public/Tiktok.png" alt="Cvc Travel Agent Website" />
               </div>
             </div>
 
@@ -159,15 +159,15 @@
               <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
               :style="isMobile ? { order: 1, marginTop: '1rem' , minWidth: isMobile ? '100%' : '' } : { display: 'grid', gridTemplateRows: 'auto auto 1fr' }">
                 <span class="project-number" v-if="!isMobile">02</span>
-                <h2  style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
+                <h2 @click="goToGoogle()" style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
                   Google 
                 </h2>
                 
-                <span  v-if="!isMobile" style="border-bottom:1px solid grey; align-self: end;font-family:Suisse !important; color:#333;">WEBSITE <div style="float:right" class="wrap-arrow mb-4"><img src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
+                <span  v-if="!isMobile" style="border-bottom:1px solid grey; align-self: end;font-family:Suisse !important; color:#333;">WEBSITE <div style="float:right" class="wrap-arrow mb-4"><img @click="goToGoogle()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
                 <hr v-if="isMobile"/>
               </div>
               <div class="project-image">
-                <img src="../../public/Google.png" alt="Cvc Travel Agent Website" />
+                <img @click="goToGoogle()" src="../../public/Google.png" alt="Cvc Travel Agent Website" />
               </div>
             </div>
         </section>
@@ -352,6 +352,12 @@ export default {
     if (this.observer) this.observer.disconnect();
   },
   methods: {
+    goToGoogle(){
+      this.$router.push('/Google')
+    },
+    goToTiktok(){
+      this.$router.push('/Tiktok')
+    },
     toggleMenu() {
       this.showMenu = !this.showMenu
     },
@@ -689,7 +695,6 @@ export default {
   font-size: 1rem;
   color: #888;
   display: block;
-  margin-bottom: 24px;
 }
 
 .project-info h2 {
@@ -714,7 +719,7 @@ export default {
 
 .project-image img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 60vh;
   box-shadow: 0 8px 32px rgba(0,0,0,0.08);
   border-radius: 16px;
   background: #eaeaea;
@@ -989,6 +994,7 @@ export default {
     padding: 0 4vw;
   }
 }
+
 
 </style>
 

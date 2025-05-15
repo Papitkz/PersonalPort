@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Blog from '../views/Blog.vue'
+import Tiktok from '../components/Tiktok.vue'
+import Google from '../components/Google.vue'
+
 
 const routes = [
   {
@@ -51,6 +54,40 @@ const routes = [
         {
           property: 'og:title',
           content: 'Blog - Nick Yebra | Portfolio',
+        },
+      ],
+    },
+  },
+  {
+    path: '/tiktok',
+    name: 'Tiktok',
+    component: Tiktok,
+    meta: {
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Learn more about Nick Yebra with Tiktok.',
+        },
+        {
+          property: 'og:title',
+          content: 'About Us - Nick Yebra | Portfolio',
+        },
+      ],
+    },
+  },
+  {
+    path: '/google',
+    name: 'Google',
+    component: Google,
+    meta: {
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Learn more about Nick Yebra with Google.',
+        },
+        {
+          property: 'og:title',
+          content: 'About Us - Nick Yebra | Portfolio',
         },
       ],
     },
