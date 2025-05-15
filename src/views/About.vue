@@ -83,7 +83,7 @@
       <h2 style="font-family: 'Suisse' !important;margin-bottom:20px">Work History</h2>
     </div>
     <div style="flex: 0 0 70%; text-align: left;">
-      <v-img  :src="Tiktok" width="50px"></v-img>
+      <v-img  src="/Tiktok.jpeg" width="50px"></v-img>
       <h4  style="font-family: 'Suisse'; color: black !important; font-size: clamp(21px, 28px, 28px);">
         Tiktok
       </h4>
@@ -104,7 +104,7 @@
       <h2 style="font-family: 'Suisse' !important;"></h2>
     </div>
     <div :style="{  flex: '0 0 70%',   textAlign: 'left',  marginTop: isMobile ? '20px' : '0' }">
-      <v-img  :src="DoorDash" width="50px"></v-img>
+      <v-img  src="/Doordash.jpeg" width="50px"></v-img>
       <h4  style="font-family: 'Suisse'; color: black !important; font-size: clamp(21px, 28px, 28px);">
         DoorDash
       </h4>
@@ -125,7 +125,7 @@
       <h2 style="font-family: 'Suisse' !important;"></h2>
     </div>
     <div  :style="{  flex: '0 0 70%',  textAlign: 'left',  marginTop: isMobile ? '20px' : '0'}">
-      <v-img  :src="Google" width="50px"></v-img>
+      <v-img  src="/Google.jpeg" width="50px"></v-img>
       <h4 style="font-family: 'Suisse'; color: black !important; font-size: clamp(21px, 28px, 28px);">
         Google
       </h4>
@@ -146,7 +146,7 @@
       <h2 style="font-family: 'Suisse' !important;"></h2>
     </div>
     <div  :style="{  flex: '0 0 70%',  textAlign: 'left', marginTop: isMobile ? '20px' : '0'}">
-      <v-img :src="Adhawk" width="50px"></v-img>
+      <v-img  src="/Adhawk.jpeg" width="50px"></v-img>
       <h4 style="font-family: 'Suisse'; color: black !important; font-size: clamp(21px, 28px, 28px);">
         AdHawk Inc
       </h4>
@@ -237,11 +237,6 @@
 <script>
 import { useHead } from '@vueuse/head'
 import Nyebra from '../../public/nyebra.jpg'
-import Tiktok from '../../public/Tiktok.jpeg'
-import DoorDash from '../../public/DoorDash.jpeg'
-import Google from '../../public/Google.jpeg'
-import Adhawk from '../../public/Adhawk.jpeg'
-
 
 
 export default {
@@ -251,10 +246,6 @@ export default {
       isMobile: false,
       showMenu: false,
       Nyebra,
-      Tiktok,
-      DoorDash,
-      Google,
-      Adhawk,
     }
   },
 
