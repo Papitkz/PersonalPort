@@ -195,22 +195,24 @@
                   <h2 class="contact-heading">Social</h2>
                   <v-row class="mt-2" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5">
                       </v-row>
+                      <v-row class="mt-2" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5">
+                      </v-row>
                       <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5">
                         <v-col>
-                          <v-icon >mdi-instagram</v-icon> Instagram
+                          <v-icon @click="goToInstagram()" >mdi-instagram</v-icon> Instagram
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
-                          <v-icon>mdi-linkedin</v-icon>LinkedIn
+                          <v-icon @click="goToLinkedin()">mdi-linkedin</v-icon>LinkedIn
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
-                          <v-icon>mdi-facebook</v-icon>Facebook
+                          <v-icon @click="gotoFacebook()">mdi-facebook</v-icon>Facebook
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
                           <v-icon>mdi-twitter</v-icon>Twitter
                         </v-col>
@@ -265,6 +267,18 @@ export default {
   },
 
   methods: {
+    gotoGithub(){
+    window.open('https://github.com/nyebra19', '_blank');
+    },
+    gotoFacebook(){
+    window.open('https://web.facebook.com/nick.yebra', '_blank');
+    },
+    goToInstagram() {
+    window.open('https://www.instagram.com/nyebra/?hl=en', '_blank');
+    },
+    goToLinkedin() {
+      window.open('https://www.linkedin.com/in/nicholas-yebra', '_blank');
+    },
     toggleMenu() {
       this.showMenu = !this.showMenu
     },

@@ -31,7 +31,7 @@
                 <v-btn style="font-family:Suisse !important" variant="text" @click="goToHome()">Work</v-btn>
                 <v-btn style="font-family:Suisse !important" variant="text" @click="goToAbout()">About</v-btn>
                 <v-btn style="font-family:Suisse !important" variant="text" @click="goToBlog()">Blog</v-btn>
-                <v-btn style="font-family:Suisse !important" variant="text" @click="navigateTo('contact')">Contact</v-btn>
+                <v-btn style="font-family:Suisse !important" variant="text" @click="goToHome()">Contact</v-btn>
               </div>
             </div>
           </transition>

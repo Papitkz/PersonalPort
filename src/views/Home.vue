@@ -126,8 +126,8 @@
       </section>
 
       <!-- selected Section-->
-      <section style="padding-bottom:10vh" id="selectedworks"   class="selectedworks-section parallax-section fade-in-section"   :class="{ visible: visibleSections.selectedworks }"
-          ref="selectedSection" :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.selectedworks  ]">
+      <section  id="selectedworks"   class="selectedworks-section parallax-section fade-in-section"   :class="{ visible: visibleSections.selectedworks }"
+          ref="selectedSection" :style="[  { paddingBottom : isMobile ? '0' : '10vh' , 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.selectedworks  ]">
           <div class="selectedworks-header" :style="{ marginTop: isMobile ? '10vh' : '5vh', paddingTop: isMobile ? '3vh' : '5vh'  }" >
             <h1 style="font-family:Suisse !important" :style="{fontSize : isMobile ? '42px' : '9em'}">Selected works<br />2016–2025</h1>
             <div v-if="!isMobile" class="down-arrow">
@@ -269,22 +269,22 @@
                       </v-row>
                       <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5">
                         <v-col>
-                          <v-icon >mdi-instagram</v-icon> Instagram
+                          <v-icon @click="goToInstagram()" >mdi-instagram</v-icon> Instagram
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
-                          <v-icon>mdi-linkedin</v-icon>LinkedIn
+                          <v-icon @click="goToLinkedin()">mdi-linkedin</v-icon>LinkedIn
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
-                          <v-icon>mdi-facebook</v-icon>Facebook
+                          <v-icon @click="gotoFacebook()">mdi-facebook</v-icon>Facebook
                         </v-col>
                       </v-row>
-                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,}">
+                      <v-row class="contact-social-link" style="font-size: clamp(21px, 2vw, 22px);line-height: 0.5,">
                         <v-col>
-                          <v-icon>mdi-twitter</v-icon>Twitter
+                          <v-icon >mdi-twitter</v-icon>Twitter
                         </v-col>
                       </v-row>
                 </div>
@@ -352,6 +352,18 @@ export default {
     if (this.observer) this.observer.disconnect();
   },
   methods: {
+    gotoGithub(){
+    window.open('https://github.com/nyebra19', '_blank');
+    },
+    gotoFacebook(){
+    window.open('https://web.facebook.com/nick.yebra', '_blank');
+    },
+    goToInstagram() {
+    window.open('https://www.instagram.com/nyebra/?hl=en', '_blank');
+    },
+    goToLinkedin() {
+      window.open('https://www.linkedin.com/in/nicholas-yebra', '_blank');
+    },
     goToGoogle(){
       this.$router.push('/Google')
     },
