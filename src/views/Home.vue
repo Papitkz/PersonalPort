@@ -383,7 +383,7 @@ export default {
       this.$router.push('/blog')
     },
     checkIsMobile() {
-      this.isMobile = window.innerWidth <= 768; // mobile breakpoint
+      this.isMobile = window.innerWidth <= 768;
     },
     handleScroll() {
       if (!this.ticking) {
@@ -397,6 +397,7 @@ export default {
     updateParallax() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
+      
 
       // Calculate parallax offset for a section's background color gradient
       const calcColorOffset = (el, speed = 0.3) => {
@@ -430,6 +431,7 @@ export default {
               const id = entry.target.id;
               if (id && id in this.visibleSections) {
                 this.visibleSections[id] = true;
+                
               }
             }
           });
@@ -809,11 +811,12 @@ export default {
 }
 
 .mobile-menu {
+  padding-top: 15% !important;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%; /* or 100vh for full screen */
+  height: 35%;
   background: white;
   z-index: 1999;
   display: flex;
@@ -888,7 +891,6 @@ export default {
   margin-bottom: 0.2em;
   font-family: 'Suisse', sans-serif;
 }
-
 
 
 .divider {

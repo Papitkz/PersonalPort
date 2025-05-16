@@ -69,11 +69,11 @@
             </v-col>
             <v-col  cols="12" md="6">
               <div>
-                <p style="font-family:Suisse !important;color: #333 ;font-size: 18px;line-height: 1.6em;font-weight:400">
+                <p style="font-family:Suisse !important;color: #333 ;font-size: 16px;line-height: 1.6em;font-weight:400">
                   Avianca is the flagship of a group of eight Latin American airlines, whose operations are combined to function as one airline using a codesharing system. Avianca is the largest airline in Colombia and second largest in Latin America, after LATAM of Brazil-Chile.  
                 </p>
                 <br>
-                <p style="font-family:Suisse !important;color: #333 ;font-size: 18px;line-height: 1.6em;">
+                <p style="font-family:Suisse !important;color: #333 ;font-size: 16px;line-height: 1.6em;">
                   We built this system on the shoulders of others. There are many principles of aesthetics, design, communication and psychology that our system uses inherently as a matter of what we know is good design.
                 </p>
               </div>
@@ -242,16 +242,17 @@ transform: translateY(-100%);
 }
 
 .mobile-menu {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 50%; /* or 100vh for full screen */
-background: white;
-z-index: 1999;
-display: flex;
-justify-content: center;
-align-items: center;
+  padding-top: 15% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35%; /* or 100vh for full screen */
+  background: white;
+  z-index: 1999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-content {

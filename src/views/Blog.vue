@@ -300,11 +300,12 @@ export default {
 }
 
 .mobile-menu {
+  padding-top: 15% !important;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%; /* or 100vh for full screen */
+  height: 35%; /* or 100vh for full screen */
   background: white;
   z-index: 1999;
   display: flex;

@@ -69,11 +69,11 @@
             </v-col>
             <v-col  cols="12" md="6">
               <div>
-                <p style="font-family:Suisse !important;color: #333 ;font-size: 18px;line-height: 1.6em;font-weight:200 !important">
+                <p style="font-family:Suisse !important;color: #333 ;font-size: 16px;line-height: 1.6em;font-weight:200 !important">
                   CVC does everything for a good trip. That is why it works to make this experience the best achievement of its life, through new trends and a wide network of tourism products and services. It is this way of thinking that establishes CVC as the largest tour operator in Latin America.
                 </p>
                 <br>
-                <p style="font-family:Suisse !important;color: #333 ;font-size: 18px;line-height: 1.6em;font-weight:200 !important">
+                <p style="font-family:Suisse !important;color: #333 ;font-size: 16px;line-height: 1.6em;font-weight:200 !important">
                   Every week was a cycle: explore, design the flow, refine and check-in with the client. The agile approach applied to design, allowing tech and business work together to deliver feasible solutions. Together we define how the experience should behave and the main roads of the product.
                 </p>
               </div>
@@ -242,16 +242,17 @@ transform: translateY(-100%);
 }
 
 .mobile-menu {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 50%; /* or 100vh for full screen */
-background: white;
-z-index: 1999;
-display: flex;
-justify-content: center;
-align-items: center;
+  padding-top: 15% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35%; /* or 100vh for full screen */
+  background: white;
+  z-index: 1999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-content {
