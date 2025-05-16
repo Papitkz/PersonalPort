@@ -305,7 +305,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 35%; /* or 100vh for full screen */
+  height: 37%;
   background: white;
   z-index: 1999;
   display: flex;
