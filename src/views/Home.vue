@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <div  class="work-image-container d-flex justify-center" :class="{ 'mobile-full': isMobile }":style="{ marginTop: isMobile ? '3vh' : '15vh', marginBottom: isMobile ? '3vh' : '10vh' }">
+            <div  class="work-image-container d-flex justify-center" :class="{ 'mobile-full': isMobile }" :style="{ marginTop: isMobile ? '3vh' : '15vh', marginBottom: isMobile ? '3vh' : '10vh' }">
               <img  src="https://wallpapers.com/images/hd/office-background-radf1ashpkt1ri23.jpg"   alt="Static description"
                 class="work-image" :class="{ 'work-image-mobile': isMobile }" />
             </div>
@@ -140,7 +140,7 @@
             </div>
           </div>
 
-            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '10vh' : '10vh' }">
+            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '5vh' : '10vh' }">
               <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
               :style="isMobile ? { order: 1, marginTop: '1rem' ,minWidth: isMobile ? '100%' : ''} : { display: 'grid', gridTemplateRows: 'auto auto 1fr', }">
                 <span class="project-number" v-if="!isMobile">01</span>
@@ -155,7 +155,7 @@
               </div>
             </div>
 
-            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '10vh' : '10vh' }">
+            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '5vh' : '10vh' }">
               <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
               :style="isMobile ? { order: 1, marginTop: '1rem' , minWidth: isMobile ? '100%' : '' } : { display: 'grid', gridTemplateRows: 'auto auto 1fr' }">
                 <span class="project-number" v-if="!isMobile">02</span>
@@ -176,7 +176,7 @@
         <section  id="capabilities" ref="capabilitiesSection" class="section Capabilities-section parallax-section fade-in-section"
         :class="{ visible: visibleSections.capabilities }"
         :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.capabilities  ]" >
-        <v-parallax  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="auto"  class="gradient-parallax"
+        <v-parallax  style="background-color: #232326 !important;"  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="auto"  class="gradient-parallax"
           color="#111" >
           <v-container fluid>
             <v-row >
@@ -236,10 +236,11 @@
       </section>
 
       <!-- Contact Section -->
+  
       <section   id="contact"  class="section contact-section parallax-section fade-in-section" :class="{ visible: visibleSections.contact }"
         ref="contactSection" 
         :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.contact  ]" >
-        <v-parallax  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="100vh"
+        <v-parallax style="background-color: #fff !important;"   src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="100vh"
           class="gradient-parallax"  color="#1e1f24">
           <v-container fill-height>
             <v-row align="start"   class="contact-top-row"    style="height: calc(100% - 120px);" >
@@ -302,6 +303,8 @@
       </section>
 
     </v-container>
+
+    
   </div>
 </template>
 

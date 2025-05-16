@@ -168,7 +168,7 @@
         ref="contactSection"  style="background:#232326"
         :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },   ]" >
         <v-parallax  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="100vh"
-          class="gradient-parallax"  color="#1e1f24">
+        style="background-color: #232326 !important;"   class="gradient-parallax"  color="#1e1f24">
           <v-container fill-height>
             <v-row align="start"   class="contact-top-row"    style="height: calc(100% - 120px);" >
               <v-col  cols="12" md="8"  class="contact-thanks">
