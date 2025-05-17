@@ -126,51 +126,63 @@
       </section>
 
       <!-- selected Section-->
-      <section  id="selectedworks"   class="selectedworks-section parallax-section fade-in-section"   :class="{ visible: visibleSections.selectedworks }"
-          ref="selectedSection" :style="[  { paddingBottom : isMobile ? '0' : '10vh' , 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.selectedworks  ]">
-          <div class="selectedworks-header" :style="{ marginTop: isMobile ? '10vh' : '5vh', paddingTop: isMobile ? '3vh' : '5vh'  }" >
-            <h1 style="font-family:Suisse !important" :style="{fontSize : isMobile ? '42px' : '9em'}">Selected works<br />2016–2025</h1>
-            <div v-if="!isMobile" class="down-arrow">
-  
-                <v-card style="border-radius: 50%;" color="#eee">
-                  <v-card-text>
-                    <v-img style="padding:4px" width="2120" src="https://d33wubrfki0l68.cloudfront.net/74eecb8f4da0c6848b3c3386ae6f11e2dd49a7f0/617b5/images/group-115.svg"></v-img>
-                  </v-card-text>
-                </v-card>
-            </div>
-          </div>
+     <section  id="selectedworks" class="selectedworks-section parallax-section fade-in-section"
+          :class="{ visible: visibleSections.selectedworks }" ref="selectedSection"
+          :style="[ { paddingBottom : isMobile ? '0' : '5vh', marginBottom : isMobile ? '4vh' : '4vh',
+           'padding-left': isMobile ? '0' : '5%', 'padding-right': isMobile ? '0' : '5%' }, parallaxStyles.selectedworks ]">
 
-            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '5vh' : '10vh' }">
-              <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
-              :style="isMobile ? { order: 1, marginTop: '1rem' ,minWidth: isMobile ? '100%' : ''} : { display: 'grid', gridTemplateRows: 'auto auto 1fr', }">
-                <span class="project-number" v-if="!isMobile">01</span>
-                <h2 @click="goToTiktok()"   style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
-                  Tiktok
-                </h2>
-                <span   v-if="!isMobile" style="border-bottom:1px solid grey;align-self: end;font-family:Suisse !important; color:#333;">WEBSITE  <div style="float:right" class="wrap-arrow mb-4"><img  @click="goToTiktok()"   src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
-              <hr v-if="isMobile"/>
-              </div>
-              <div  class="project-image">
-                <img  @click="goToTiktok()"    src="../../public/Tiktok.png" alt="Cvc Travel Agent Website" />
-              </div>
-            </div>
+  <div class="selectedworks-header" :style="{ marginTop: isMobile ? '5vh' : '2vh', paddingTop: isMobile ? '2vh' : '3vh' }">
+    <h1 style="font-family:Suisse !important" :style="{fontSize : isMobile ? '42px' : '9em'}">Selected works<br />2016–2025</h1>
+    <div v-if="!isMobile" class="down-arrow">
+      <v-card style="border-radius: 50%;" color="#eee">
+        <v-card-text>
+          <v-img style="padding:4px" width="2120" src="https://d33wubrfki0l68.cloudfront.net/74eecb8f4da0c6848b3c3386ae6f11e2dd49a7f0/617b5/images/group-115.svg"></v-img>
+        </v-card-text>
+      </v-card>
+    </div>
+  </div>
 
-            <div class="selectedworks-content">
-              <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
-              :style="isMobile ? { order: 1, marginTop: '1rem' , minWidth: isMobile ? '100%' : '' } : { display: 'grid', gridTemplateRows: 'auto auto 1fr' }">
-                <span class="project-number" v-if="!isMobile">02</span>
-                <h2 @click="goToGoogle()" style="font-family:Suisse !important; color:#333; font-weight:400" :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
-                  Google 
-                </h2>
-                
-                <span  v-if="!isMobile" style="border-bottom:1px solid grey; align-self: end;font-family:Suisse !important; color:#333;">WEBSITE <div style="float:right" class="wrap-arrow mb-4"><img @click="goToGoogle()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt=""></div></span>
-                <hr v-if="isMobile"/>
-              </div>
-              <div class="project-image">
-                <img @click="goToGoogle()" src="../../public/Google.png" alt="Cvc Travel Agent Website" />
-              </div>
-            </div>
-        </section>
+  <div class="selectedworks-content" :style="{ marginTop: isMobile ? '3vh' : '5vh', }">
+    <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
+      <span class="project-number" v-if="!isMobile">01</span>
+      <h2 @click="goToTiktok()" style="font-family:Suisse !important; color:#333; font-weight:400"
+          :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
+        Tiktok
+      </h2>
+      <span v-if="!isMobile" style="border-bottom:1px solid grey;align-self: end;font-family:Suisse !important; color:#333;">
+        WEBSITE
+        <div style="float:right" class="wrap-arrow mb-4">
+          <img @click="goToTiktok()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt="">
+        </div>
+      </span>
+      <hr v-if="isMobile"/>
+    </div>
+    <div class="project-image">
+      <img @click="goToTiktok()" src="../../public/Tiktok.png" alt="Cvc Travel Agent Website" />
+    </div>
+  </div>
+
+  <div class="selectedworks-content " style="margin-top:3vh;">
+    <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
+      <span class="project-number" v-if="!isMobile">02</span>
+      <h2 @click="goToGoogle()" style="font-family:Suisse !important; color:#333; font-weight:400"
+          :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
+        Google
+      </h2>
+      <span v-if="!isMobile" style="border-bottom:1px solid grey; align-self: end;font-family:Suisse !important; color:#333;">
+        WEBSITE
+        <div style="float:right" class="wrap-arrow mb-4">
+          <img @click="goToGoogle()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt="">
+        </div>
+      </span>
+      <hr v-if="isMobile"/>
+    </div>
+    <div class="project-image">
+      <img @click="goToGoogle()" src="../../public/Google.png" alt="Cvc Travel Agent Website" />
+    </div>
+  </div>
+</section>
+
 
       <!-- Capabilties Section-->
         <section  id="capabilities" ref="capabilitiesSection" class="section Capabilities-section parallax-section fade-in-section"
@@ -661,7 +673,6 @@ export default {
 
 .selectedworks-section {
   background: #fafafa;
-  min-height: 200vh;
 }
 
 .selectedworks-header {
