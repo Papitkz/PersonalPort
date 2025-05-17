@@ -155,7 +155,7 @@
               </div>
             </div>
 
-            <div class="selectedworks-content" :style="{ marginTop: isMobile ? '5vh' : '10vh' }">
+            <div class="selectedworks-content">
               <div class="project-info" style="display: grid; grid-template-rows: auto auto 1fr;"
               :style="isMobile ? { order: 1, marginTop: '1rem' , minWidth: isMobile ? '100%' : '' } : { display: 'grid', gridTemplateRows: 'auto auto 1fr' }">
                 <span class="project-number" v-if="!isMobile">02</span>
