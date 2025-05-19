@@ -138,6 +138,9 @@ export default {
    goToAbout() {
      this.$router.push('/about');
    },
+   goToBlog(){
+      this.$router.push('/blog')
+    },
 
    },
    setup() {

@@ -12,7 +12,7 @@
            <v-btn :ripple="false" type="text" width="100">Work</v-btn>
            <v-btn @click="goToAbout()" :ripple="false" type="text" width="100">About</v-btn>
            <v-btn @click="goToBlog()"  :ripple="false" type="text" width="100">Blog</v-btn>
-           <v-btn :ripple="false" type="text" width="100">Contact</v-btn>
+           <v-btn :ripple="false" type="text" width="100" @click="scrollToTop()">Contact</v-btn>
          </v-toolbar-items>
           <v-spacer/>
        </v-toolbar>
@@ -31,7 +31,7 @@
                 <v-btn style="font-family:Suisse !important" variant="text" >Work</v-btn>
                 <v-btn style="font-family:Suisse !important" variant="text" @click="goToAbout()">About</v-btn>
                 <v-btn style="font-family:Suisse !important" variant="text" @click="goToBlog()">Blog</v-btn>
-                <v-btn style="font-family:Suisse !important" variant="text" @click="navigateTo('contact')">Contact</v-btn>
+                <v-btn style="font-family:Suisse !important" variant="text" @click="scrollToTop()">Contact</v-btn>
               </div>
             </div>
           </transition>
@@ -125,67 +125,150 @@
           </v-parallax>
       </section>
 
-      <!-- selected Section-->
-     <section  id="selectedworks" class="selectedworks-section parallax-section fade-in-section"
-          :class="{ visible: visibleSections.selectedworks }" ref="selectedSection"
+      <section
+          ref="selectedSection"   id="selectedworks"   class="selectedworks-section parallax-section fade-in-section"
+          :class="{ visible: visibleSections.selectedworks }"
+          
           :style="[ { paddingBottom : isMobile ? '0' : '5vh', marginBottom : isMobile ? '4vh' : '4vh',
-           'padding-left': isMobile ? '0' : '5%', 'padding-right': isMobile ? '0' : '5%' }, parallaxStyles.selectedworks ]">
+           'padding-left': isMobile ? '0' : '11%', 'padding-right': isMobile ? '0' : '11%' }, parallaxStyles.selectedworks ]"
+        >
+          <!-- Header -->
+          <div
+            class="selectedworks-header"
+            :style="{
+              marginTop: isMobile ? '5vh' : '2vh',
+              paddingTop: isMobile ? '2vh' : '3vh',
+              textAlign: isMobile ? 'left' : 'left',
+            }"
+          >
+            <h1  style="font-family:Suisse !important"  :style="{ fontSize: isMobile ? '42px' : '9em', lineHeight: isMobile ? '1.1' : '1' }">
+              Selected works<br/>2016–2025
+            </h1>
+            <div v-if="!isMobile" class="down-arrow" style="margin-top: 1rem;">
+              <v-card style="border-radius: 50%;" color="#eee">
+                <v-card-text>
+                  <v-img
+                    style="padding:4px"
+                    width="2120"
+                    src="https://d33wubrfki0l68.cloudfront.net/74eecb8f4da0c6848b3c3386ae6f11e2dd49a7f0/617b5/images/group-115.svg"
+                  ></v-img>
+                </v-card-text>
+              </v-card>
+            </div>
+          </div>
 
-  <div class="selectedworks-header" :style="{ marginTop: isMobile ? '5vh' : '2vh', paddingTop: isMobile ? '2vh' : '3vh' }">
-    <h1 style="font-family:Suisse !important" :style="{fontSize : isMobile ? '42px' : '9em'}">Selected works<br />2016–2025</h1>
-    <div v-if="!isMobile" class="down-arrow">
-      <v-card style="border-radius: 50%;" color="#eee">
-        <v-card-text>
-          <v-img style="padding:4px" width="2120" src="https://d33wubrfki0l68.cloudfront.net/74eecb8f4da0c6848b3c3386ae6f11e2dd49a7f0/617b5/images/group-115.svg"></v-img>
-        </v-card-text>
-      </v-card>
-    </div>
-  </div>
+          <!-- Project 1: Tiktok -->
+          <div ref="selectedworks1"   id="selectedworks1" class="selectedworks-content fade-in-section" :style="{ marginTop: isMobile ? '3vh' : '5vh' }" :class="{ visible: visibleSections.selectedworks1 }">
+            <template v-if="!isMobile">
+              <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
+                <span class="project-number">01</span>
+                <h2
+                  @click="goToTiktok()"
+                  style="font-family:Suisse !important; color:#333; font-weight:400; cursor: pointer;"
+                  :style="{ fontSize: '4em', marginTop: '15vh' }"
+                >
+                  Tiktok
+                </h2>
+                <span
+                  style="border-bottom:1px solid grey; align-self: end; font-family:Suisse !important; color:#333; display: flex; justify-content: space-between; align-items: center;"
+                >
+                  WEBSITE
+                  <div class="wrap-arrow mb-4" style="cursor: pointer;" @click="goToTiktok">
+                    <img
+                      src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg"
+                      loading="lazy"
+                      alt="arrow"
+                      style="width: 24px; height: 24px;"
+                    />
+                  </div>
+                </span>
+                <hr />
+              </div>
+              <div class="project-image" @click="goToTiktok">
+                <img
+                  src="../../public/Tiktok.png"
+                  alt="Tiktok Project"
+                  class="zoom-img"
+                />
+              </div>
+            </template>
 
-  <div class="selectedworks-content" :style="{ marginTop: isMobile ? '3vh' : '5vh', }">
-    <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
-      <span class="project-number" v-if="!isMobile">01</span>
-      <h2 @click="goToTiktok()" style="font-family:Suisse !important; color:#333; font-weight:400"
-          :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
-        Tiktok
-      </h2>
-      <span v-if="!isMobile" style="border-bottom:1px solid grey;align-self: end;font-family:Suisse !important; color:#333;">
-        WEBSITE
-        <div style="float:right" class="wrap-arrow mb-4">
-          <img @click="goToTiktok()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt="">
-        </div>
-      </span>
-      <hr v-if="isMobile"/>
-    </div>
-    <div class="project-image">
-      <img @click="goToTiktok()" src="../../public/Tiktok.png" alt="Cvc Travel Agent Website" />
-    </div>
-  </div>
+            <template v-else>
+              <div
+                class="project-image fixed-image"
+                @click="goToTiktok"
+                style="position: relative;"
+              >
+                <img
+                  src="../../public/Tiktok.png"
+                  alt="Tiktok Project"
+                  class="zoom-img"
+                />
+              </div>
+              <div style="width:100%">
+                <h2 class="black-text" style="font-family:Suisse !important;font-size:35px">Tiktok</h2>
+                <hr>
+              </div>
+            </template>
+          </div>
+          <!-- Project 2: Google -->
+          <div ref="selectedworks2"   id="selectedworks2" class="selectedworks-content fade-in-section"  :style="{ marginTop: '3vh' }" :class="{ visible: visibleSections.selectedworks2 }">
+            <template v-if="!isMobile">
+              <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
+                <span class="project-number">02</span>
+                <h2
+                  @click="goToGoogle()"
+                  style="font-family:Suisse !important; color:#333; font-weight:400; cursor: pointer;"
+                  :style="{ fontSize: '4em', marginTop: '15vh' }"
+                >
+                  Google
+                </h2>
+                <span
+                  style="border-bottom:1px solid grey; align-self: end; font-family:Suisse !important; color:#333; display: flex; justify-content: space-between; align-items: center;"
+                >
+                  WEBSITE
+                  <div class="wrap-arrow mb-4" style="cursor: pointer;" @click="goToGoogle">
+                    <img
+                      src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg"
+                      loading="lazy"
+                      alt="arrow"
+                      style="width: 24px; height: 24px;"
+                    />
+                  </div>
+                </span>
+                <hr />
+              </div>
+              <div class="project-image" @click="goToGoogle">
+                <img
+                  src="../../public/Google.png"
+                  alt="Google Project"
+                  class="zoom-img"
+                />
+              </div>
+            </template>
 
-  <div class="selectedworks-content " style="margin-top:3vh;">
-    <div class="project-info" style="display: grid; grid-template-rows: auto auto;">
-      <span class="project-number" v-if="!isMobile">02</span>
-      <h2 @click="goToGoogle()" style="font-family:Suisse !important; color:#333; font-weight:400"
-          :style="{ fontSize: isMobile ? '42px' : '4em',marginTop: isMobile ? '' : '15vh' }">
-        Google
-      </h2>
-      <span v-if="!isMobile" style="border-bottom:1px solid grey; align-self: end;font-family:Suisse !important; color:#333;">
-        WEBSITE
-        <div style="float:right" class="wrap-arrow mb-4">
-          <img @click="goToGoogle()" src="https://d33wubrfki0l68.cloudfront.net/a3ad9e89e316f78243933090ff265a5f550ac6cc/51f88/images/vector-1.svg" loading="lazy" alt="">
-        </div>
-      </span>
-      <hr v-if="isMobile"/>
-    </div>
-    <div class="project-image">
-      <img @click="goToGoogle()" src="../../public/Google.png" alt="Cvc Travel Agent Website" />
-    </div>
-  </div>
-</section>
-
+            <template v-else>
+              <div 
+                class="project-image fixed-image"
+                @click="goToGoogle"
+              >
+                <img
+                  src="../../public/Google.png"
+                  alt="Google Project"
+                  class="zoom-img"
+                />
+              </div>
+              <div style="width:100%" >
+                <h2 class="black-text" style="font-family:Suisse !important;font-size:35px">Google</h2>
+                <hr/>
+            </div>
+            </template>
+           
+          </div>
+        </section>
 
       <!-- Capabilties Section-->
-        <section  id="capabilities" ref="capabilitiesSection" class="section Capabilities-section parallax-section fade-in-section"
+      <section  id="capabilities" ref="capabilitiesSection" class="section Capabilities-section parallax-section fade-in-section"
         :class="{ visible: visibleSections.capabilities }"
         :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.capabilities  ]" >
         <v-parallax  style="background-color: #232326 !important;"  src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="  height="auto"  class="gradient-parallax"
@@ -246,9 +329,7 @@
           </v-container>
         </v-parallax>
       </section>
-
       <!-- Contact Section -->
-  
       <section   id="contact"  class="section contact-section parallax-section fade-in-section" :class="{ visible: visibleSections.contact }"
         ref="contactSection" 
         :style="[  { 'padding-left': isMobile ? '0' : '10%', 'padding-right': isMobile ? '0' : '10%' },  parallaxStyles.contact  ]" >
@@ -342,7 +423,9 @@ export default {
         blog: false,
         contact: false,
         capabilities:false,
-        selectedworks:false
+        selectedworks:false,
+        selectedworks1:false,
+        selectedworks2:false
       },
       ticking: false,
       observer: null,
@@ -367,6 +450,9 @@ export default {
     if (this.observer) this.observer.disconnect();
   },
   methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     gotoGithub(){
     window.open('https://github.com/nyebra19', '_blank');
     },
@@ -452,7 +538,7 @@ export default {
           threshold: 0.1,
         }
       );
-      ['workSection', 'aboutSection', 'blogSection', 'contactSection' , 'capabilitiesSection', 'selectedSection'].forEach(refName => {
+      ['workSection', 'aboutSection', 'blogSection', 'contactSection' , 'capabilitiesSection', 'selectedSection','selectedworks1','selectedworks2'].forEach(refName => {
         if (this.$refs[refName]) {
           this.observer.observe(this.$refs[refName]);
         }
@@ -748,8 +834,7 @@ export default {
 .project-image img {
   max-width: 100%;
   max-height: 60vh;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  border-radius: 16px;
+  border-radius: 0% !important;
   background: #eaeaea;
 }
 
@@ -765,15 +850,50 @@ export default {
 .project-image img:hover {
   transform: scale(1.05);
 }
-@media (hover: hover) and (pointer: fine) {
-  .project-image img {
-    transition: transform 0.3s ease;
-  }
 
-  .project-image img:hover {
-    transform: scale(1.05);
-  }
+.project-image {
+  max-width: 100%;
+  max-height: 55vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #eaeaea;
+  cursor: pointer;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
+
+.zoom-img {
+  width: 90%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+}
+
+.project-image:hover .zoom-img,
+.project-image:active .zoom-img {
+  transform: scale(1.12);
+}
+
+/* Mobile title overlay */
+.mobile-title-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 12px 20px;
+  /* background: rgba(0, 0, 0, 0.5); */
+  color: black;
+  font-family: Suisse, sans-serif !important;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: left;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  user-select: none;
+  pointer-events: none;
+} 
 
 
 /* CAPABILITIES SECTION */

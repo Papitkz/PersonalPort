@@ -45,7 +45,7 @@
           <hr class="drafts-divider" />
           <ul class="drafts-list">
             <li v-for="draft in drafts" :key="draft" class="draft-item">
-              <span class="draft-icon">&#119070;</span>
+              <span class="draft-icon">•</span>
               <span :style="{fontSize : isMobile ? '15px' : '19px'}" class="draft-title">{{ draft }}</span>
             </li>
           </ul>
@@ -194,6 +194,9 @@ export default {
     },
     goToAbout() {
       this.$router.push('/about');
+    },
+    goToBlog(){
+      this.$router.push('/blog')
     },
 
     },
