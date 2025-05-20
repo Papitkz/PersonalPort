@@ -558,6 +558,9 @@ export default {
 </script>
 
 <style scoped>
+.fixed-image{
+  width: 100% !important;
+}
 /* Hide the default checkbox */
 .container input {
   position: absolute;

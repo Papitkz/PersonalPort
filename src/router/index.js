@@ -4,9 +4,9 @@ import About from '../views/About.vue'
 import Blog from '../views/Blog.vue'
 import Tiktok from '../components/Tiktok.vue'
 import Google from '../components/Google.vue'
+import DoorDash from '../components/DoorDash.vue'
 
-
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
@@ -84,6 +84,23 @@ const routes = [
         {
           name: 'description',
           content: 'Learn more about Nick Yebra with Google.',
+        },
+        {
+          property: 'og:title',
+          content: 'About Us - Nick Yebra | Portfolio',
+        },
+      ],
+    },
+  },
+  {
+    path: '/doordash',
+    name: 'DoorDash',
+    component: DoorDash,
+    meta: {
+      metaTags: [
+        {
+          name: 'description',
+          content: 'Learn more about Nick Yebra with DoorDash.',
         },
         {
           property: 'og:title',
